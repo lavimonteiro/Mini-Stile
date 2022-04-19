@@ -5,21 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="navstyle.css" rel="stylesheet" type="text/css" />
   </head>
+  <style>
+    body {
+      background-color: rgb(241, 241, 241);
+      margin: 0;
+    }
+    .banner {
+      display: block;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .welcome-banner {
+      overflow: hidden;
+      height: 200px;
+      max-height: 300px;
+      position: relative;
+    }
+
+    .center-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 100px;
+      font-family: sans-serif;
+      font-weight: bold;
+      text-shadow: 10px;
+      color: rgb(43, 32, 32);
+      transform: translate(-50%, -50%);
+    }
+  </style>
   <body>
     <header>
       <div class="navbar">
         <nav>
           <ul class="navlinks">
-            <li></li>
+            <li id="empty"></li>
             <li id="home-link"><a href="homepage.html">Home</a></li>
             <li id="profile-link"><a href="#">Profile</a></li>
             <li id="library-link"><a href="library.html">Library</a></li>
-            <li></li>
           </ul>
         </nav>
       </div>
     </header>
+    <div class="welcome-banner">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/5cfa5a1a2df47900015e2643/1616085648067-OQ5TUTY61TFOBZN6I6ZN/Home+Page+Banner-test.jpg?format=2500w"
+        alt="lesson two"
+        class="banner"
+      />
+      <div class="center-text">Stile</div>
+      <p>Stile</p>
+    </div>
+    <div class="welcome-text">
+      <p>Welcome to Mini Stile!</p>
+      <br />
+      <p>Log-in and start your journey</p>
+    </div>
   </body>
 </html>
