@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>library</title>
     <link href="lessonicons.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
       body {
         background-color: #c3c3c3;
@@ -19,28 +20,6 @@
         color: rgb(0, 255, 26);
         text-align: center;
       }
-      li {
-        display: inline-block;
-      }
-      #homepage-link {
-        padding-left: 20%;
-        padding-right: 25%;
-      }
-      #profile-link {
-        padding-right: 20%;
-        padding-left: 25%;
-      }
-      #navigation {
-        font-family: sans-serif;
-        background-color: #34424a;
-        text-align: center;
-        padding-top: 2px;
-        padding-bottom: 2px;
-      }
-      a {
-        text-decoration: none;
-        color: #ffffff;
-      }
     </style>
   </head>
   <body>
@@ -49,16 +28,19 @@
         <h1>Stile</h1>
       </header>
     </div>
-    <div id="navigation">
+    <div class="navbar">
       <nav>
-        <ul>
-          <li id="homepage-link"><a href="homepage.html">Home</a></li>
+        <ul class="navlinks">
+          <li></li>
+          <li id="home-link"><a href="homepage.html">Home</a></li>
           <li id="profile-link"><a href="#">Profile</a></li>
+          <li id="library-link"><a href="library.html">Library</a></li>
+          <li></li>
         </ul>
       </nav>
     </div>
-
     <h1>Stile Lessons</h1>
+
     <div class="lessons">
       <ul>
         <li>
