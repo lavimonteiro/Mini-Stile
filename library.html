@@ -12,13 +12,17 @@
       body {
         background-color: #c3c3c3;
       }
+      #stile-lesson-heading {
+        font-family: sans-serif;
+        padding-left: 5%;
+      }
       #header {
         font-family: sans-serif;
         background-color: #ffffff;
         height: 80px;
         width: 100%;
         font-size: 30px;
-        color: rgb(0, 255, 26);
+        color: rgb(0, 230, 90);
         text-align: center;
       }
     </style>
@@ -32,35 +36,43 @@
     <div class="navbar">
       <nav>
         <ul class="navlinks">
-          <li></li>
-          <li id="home-link"><a href="homepage.html">Home</a></li>
-          <li id="profile-link"><a href="#">Profile</a></li>
-          <li id="library-link"><a href="library.html">Library</a></li>
-          <li></li>
+          <li class="menu-item"></li>
+          <li id="home-link" class="menu-item">
+            <a href="homepage.html">Home</a>
+          </li>
+          <li id="profile-link" class="menu-item"><a href="#">Profile</a></li>
+          <li id="library-link" class="menu-item">
+            <a href="library.html">Library</a>
+          </li>
+          <li class="menu-item"></li>
         </ul>
       </nav>
     </div>
-    <h1>Stile Lessons</h1>
+    <h1 id="stile-lesson-heading">Stile Lessons</h1>
 
     <div class="lessons">
       <ul>
         <li>
           <div class="lesson-one">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/3/37/Killerwhales_jumping.jpg"
-              alt="lesson one"
-              class="img-one"
-            />
+            <a href="lessons1.html">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/37/Killerwhales_jumping.jpg"
+                alt="lesson one"
+                class="img-one"
+              />
+            </a>
             <div class="overlay-one">This is lesson one</div>
           </div>
         </li>
         <li>
           <div class="lesson-two">
-            <img
-              src="https://imageio.forbes.com/specials-images/imageserve/6082931ef598a85b055afe77/two-month-old-Ragdoll-kitten-at-home/0x0.jpg?fit=crop&format=jpg&crop=3475,1955,x0,y182,safe"
-              alt="lesson two"
-              class="img-two"
-            />
+            <a href="lesson2.html">
+              <img
+                src="https://imageio.forbes.com/specials-images/imageserve/6082931ef598a85b055afe77/two-month-old-Ragdoll-kitten-at-home/0x0.jpg?fit=crop&format=jpg&crop=3475,1955,x0,y182,safe"
+                alt="lesson two"
+                class="img-two"
+              />
+            </a>
             <div class="overlay-two">This is lesson two</div>
           </div>
         </li>
