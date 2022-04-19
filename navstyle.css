@@ -1,7 +1,7 @@
 
 .navbar {
 font-family: sans-serif;
-padding: 2px;
+padding: 1px;
 background-color: rgb(43, 32, 32);
 
 }
@@ -9,17 +9,11 @@ background-color: rgb(43, 32, 32);
 .menu-item {
 display: inline-block;
 width: 150px;
-
 }
 
 a {
 text-decoration: none;
 color: white;
-}
-
-body {
-    background-color: rgb(241, 241, 241);
-    margin: 0;
 }
 
 #home-link {
