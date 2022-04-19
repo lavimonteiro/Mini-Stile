@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>library</title>
+    <link href="lessonicons.css" rel="stylesheet" type="text/css" />
     <style>
       body {
         background-color: #c3c3c3;
@@ -17,8 +18,6 @@
         font-size: 30px;
         color: rgb(0, 255, 26);
         text-align: center;
-        /* padding-top: 10px;
-        padding-bottom: 10px; */
       }
       li {
         display: inline-block;
@@ -35,6 +34,8 @@
         font-family: sans-serif;
         background-color: #34424a;
         text-align: center;
+        padding-top: 2px;
+        padding-bottom: 2px;
       }
       a {
         text-decoration: none;
@@ -51,12 +52,30 @@
     <div id="navigation">
       <nav>
         <ul>
-          <li id="homepage-link"><a href="homepage.html">home</a></li>
-          <li id="profile-link"><a href="#">profile</a></li>
+          <li id="homepage-link"><a href="homepage.html">Home</a></li>
+          <li id="profile-link"><a href="#">Profile</a></li>
         </ul>
       </nav>
     </div>
 
     <h1>Stile Lessons</h1>
+    <div class="lessons">
+      <ul>
+        <li>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/3/37/Killerwhales_jumping.jpg"
+            alt="lesson one"
+          />
+          <div class="overlay">This is lesson one</div>
+        </li>
+        <li>
+          <img
+            src="https://imageio.forbes.com/specials-images/imageserve/6082931ef598a85b055afe77/two-month-old-Ragdoll-kitten-at-home/0x0.jpg?fit=crop&format=jpg&crop=3475,1955,x0,y182,safe"
+            alt="lesson two"
+          />
+          <div class="overlay">This is lesson two</div>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
