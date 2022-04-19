@@ -4,6 +4,7 @@
 font-family: sans-serif;
 padding: 2px;
 background-color: rgb(43, 32, 32);
+
 }
 
 li {
@@ -23,7 +24,7 @@ body {
 }
 
 #home-link {
-    float: left;
+    float: left;  
 }
 #library-link, #profile-link, #profile-image{
     float: right;

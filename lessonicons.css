@@ -2,7 +2,7 @@
 
 .lesson-one {
   position: relative;
-  width: 50%;
+  width: 100%;
   max-width: 500px;}
 
 .img-one{
@@ -46,10 +46,9 @@
 
 
 * {box-sizing: border-box}
-
 .lesson-two {
   position: relative;
-  width: 50%;
+  width: 100%;
   max-width: 500px;}
 
 .img-two{
