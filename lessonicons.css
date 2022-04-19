@@ -1,4 +1,10 @@
+
+
+
 * {box-sizing: border-box}
+li{
+    display: inline-block;
+    }
 
 .lesson-one {
   position: relative;
