@@ -8,14 +8,15 @@ li{
 
 .lesson-one {
   position: relative;
-  width: 100%;
-  max-width: 500px;}
+  width: 70%;
+  max-width:1000px;}
 
-.img-one{
+#img-one{
   display: block;
   width: 100%;
   height: auto;
 }
+
 /* The overlay effect - lays on top of the container and over the image */
 .overlay-one {
   position: absolute;
@@ -40,29 +41,17 @@ li{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 * {box-sizing: border-box}
 .lesson-two {
   position: relative;
-  width: 100%;
-  max-width: 500px;}
-
-.img-two{
+  width: 70%;
+  max-width: 1000px;}
+/* The overlay effect - lays on top of the container and over the image */
+#img-two{
   display: block;
   width: 100%;
   height: auto;
 }
-/* The overlay effect - lays on top of the container and over the image */
 .overlay-two {
   position: absolute;
   bottom: 0;
