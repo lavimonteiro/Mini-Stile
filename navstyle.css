@@ -11,7 +11,7 @@ display: inline-block;
 width: 150px;
 }
 
-a {
+.navlinks {
 text-decoration: none;
 color: white;
 }

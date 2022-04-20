@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="navstyle.css" rel="stylesheet" type="text/css" />
+    <link href="login.css" rel="stylesheet" type="text/css" />
   </head>
   <style>
     body {
@@ -34,23 +35,40 @@
       font-size: 100px;
       font-family: sans-serif;
       font-weight: bold;
-      text-shadow: 10px;
       color: rgb(43, 32, 32);
       transform: translate(-50%, -50%);
+    }
+
+    .welcome-text {
+      font-family: sans-serif;
+      text-align: center;
+      color: rgb(54, 104, 4);
+      -webkit-text-stroke: 2px rgb(54, 104, 4);
+    }
+
+    #welcome {
+      font-size: 80px;
+      font-weight: 500;
+    }
+
+    #log-in {
+      font-size: 40px;
     }
   </style>
   <body>
     <header>
       <div class="navbar">
         <nav>
-          <ul class="navlinks">
+          <ul>
             <li class="menu-item"></li>
             <li id="home-link" class="menu-item">
-              <a href="homepage.html">Home</a>
+              <a class="navlinks" href="homepage.html">Home</a>
             </li>
-            <li id="profile-link" class="menu-item"><a href="#">Profile</a></li>
+            <li id="profile-link" class="menu-item">
+              <a class="navlinks" href="profile.html">Profile</a>
+            </li>
             <li id="library-link" class="menu-item">
-              <a href="library.html">Library</a>
+              <a class="navlinks" href="library.html">Library</a>
             </li>
           </ul>
         </nav>
@@ -63,12 +81,43 @@
         class="banner"
       />
       <div class="center-text">Stile</div>
-      <p>Stile</p>
     </div>
     <div class="welcome-text">
-      <p>Welcome to Mini Stile!</p>
-      <br />
-      <p>Log-in and start your journey</p>
+      <p id="welcome">Welcome to Mini Stile!</p>
+      <p id="log-in">Log-in and start your journey</p>
     </div>
+    <div class="profile-container">
+      <form id="login-form" class="form">
+        <h1 class="form-title">Login</h1>
+        <div class="form-message">Incorrect username/password</div>
+        <div class="username-input">
+          <input
+            class="form-input"
+            type="text"
+            autofocus
+            placeholder="Username or email"
+          />
+        </div>
+        <div class="form-message">Error message</div>
+        <div class="passwor-input">
+          <input
+            class="form-input"
+            type="password"
+            autofocus
+            placeholder="Password"
+          />
+        </div>
+        <button class="form-button" type="submit">Continue</button>
+        <p class="form-text">
+          <a href="#" class="form-link">Forgot you Password?</a>
+        </p>
+        <p class="form-text">
+          <a class="form-link" id="linkCreateAccount">
+            Don't have an account? Create Account
+          </a>
+        </p>
+      </form>
+    </div>
+    <script src="login.js"></script>
   </body>
 </html>
