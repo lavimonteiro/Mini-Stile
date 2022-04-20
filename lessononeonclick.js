@@ -1,5 +1,3 @@
-
-
 var icon = document.getElementsByClassName("icon");
 var i;
 var onIconClick= function() {

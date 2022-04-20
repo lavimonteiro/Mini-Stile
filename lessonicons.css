@@ -71,3 +71,18 @@ li{
 .lesson-two:hover .overlay-two {
   opacity: 1;
 }
+
+
+
+.icon {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;}

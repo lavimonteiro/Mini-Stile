@@ -9,26 +9,6 @@
     <link href="navstyle.css" rel="stylesheet" type="text/css" />
 
     <style>
-      .collapsible:after {
-        content: "\002B";
-        color: white;
-        font-weight: bold;
-        float: right;
-        margin-left: 5px;
-      }
-
-      .active:after {
-        content: "\2212";
-      }
-
-      .content {
-        padding: 0 18px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-        background-color: #f1f1f1;
-      }
-
       body {
         background-color: rgb(241, 241, 241);
       }
@@ -71,28 +51,30 @@
       <ul>
         <li>
           <div class="lesson-one">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/3/37/Killerwhales_jumping.jpg"
-              alt="lesson one"
-              class="icon"
-              id="img-one"
-            />
             <div class="overlay-one">This is lesson one</div>
-            <div class="drop-down-content">
+            <button class="icon">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/37/Killerwhales_jumping.jpg"
+                alt="lesson one"
+                id="img-one"
+              />
+            </button>
+     
+            <div class="content"> 
               <p>This lesson is about killer whales</p>
             </div>
           </div>
         </li>
-        <li>
-          <div class="lesson-two">
+           <div class="lesson-two">
+            <div class="overlay-two">This is lesson two</div>
+            <button class="icon">
             <img
               src="https://imageio.forbes.com/specials-images/imageserve/6082931ef598a85b055afe77/two-month-old-Ragdoll-kitten-at-home/0x0.jpg?fit=crop&format=jpg&crop=3475,1955,x0,y182,safe"
               alt="lesson two"
-              class="icon"
               id="img-two"
             />
-            <div class="overlay-two">This is lesson two</div>
-            <div class="drop-down-content">
+          </button> 
+            <div class="content">
               <p>This lesson is about cats</p>
             </div>
           </div>
@@ -100,9 +82,9 @@
       </ul>
     </div>
     <div id="header">
-      <header>
+      <footer>
         <h1>Stile</h1>
-      </header>
+      </footer>
     </div>
   </body>
   <script src="lessononeonclick.js" defer type="module"></script>
