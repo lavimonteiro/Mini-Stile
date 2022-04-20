@@ -11,6 +11,7 @@
     <style>
       body {
         background-color: rgb(241, 241, 241);
+        font-family: sans-serif;
       }
       #stile-lesson-heading {
         font-family: sans-serif;
@@ -48,49 +49,55 @@
     <h1 id="stile-lesson-heading">Stile Lessons</h1>
 
     <div class="lessons">
-      <ul>
-        <li>
-        
+      <div class="row">
+        <div class="column">
+         
           <div class="lesson-one">
-            <div class="overlay-one">This is lesson one</div>
-            <button class="icon">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/3/37/Killerwhales_jumping.jpg"
-                alt="lesson one"
-                id="img-one"
-              />
+            <button type = "button" class="icon">
+              <div class="card">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/37/Killerwhales_jumping.jpg"
+                  alt="lesson one"
+                  id="img-one"
+                />
+              </div>
             </button>
-     
-            <div class="content"> 
+
+            <div class="content">
               <p>This lesson is about killer whales</p>
               <form action="lessons1.html">
                 <button>go to lesson</button>
               </form>
             </div>
-          
+            <div class="overlay-one">This is lesson one</div>
           </div>
+          
+        </div>
 
-          
-        </li>
-           <div class="lesson-two">
-            <div class="overlay-two">This is lesson two</div>
-            <button class="icon">
-            <img
-              src="https://imageio.forbes.com/specials-images/imageserve/6082931ef598a85b055afe77/two-month-old-Ragdoll-kitten-at-home/0x0.jpg?fit=crop&format=jpg&crop=3475,1955,x0,y182,safe"
-              alt="lesson two"
-              id="img-two"
-            />
-          </button> 
-            <div class="content">
-              <p>This lesson is about cats</p>
-              <form action="lessons2.html">
-                <button>go to lesson</button>
-              </form>
+        <div class="column">
+        <div class="lesson-two">
+          <div class="overlay-two">This is lesson two</div>
+          <button type ="button" class="icon">
+            <div class="card">
+              <img
+                src="https://imageio.forbes.com/specials-images/imageserve/6082931ef598a85b055afe77/two-month-old-Ragdoll-kitten-at-home/0x0.jpg?fit=crop&format=jpg&crop=3475,1955,x0,y182,safe"
+                alt="lesson two"
+                id="img-two"
+              />
             </div>
+          </button>
+          <div class="content">
+            <p>This lesson is about cats</p>
+            <form action="lessons2.html">
+              <button>go to lesson</button>
+            </form>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
+
+
+
     <div id="header">
       <footer>
         <h1>Stile</h1>

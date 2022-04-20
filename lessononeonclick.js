@@ -1,14 +1,18 @@
 var icon = document.getElementsByClassName("icon");
 var i;
-var onIconClick= function() {
+let onIconClick = function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
+    var overlay = content.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+        overlay.style.display = "block";
     } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } 
+        content.style.display = "block";
+        overlay.style.display = "none";
+    }
   }
 for (i = 0; i < icon.length; i++) {
-  icon[i].addEventListener("click", onIconClick);
+  icon[i].addEventListener("click",onIconClick);
 }
+
