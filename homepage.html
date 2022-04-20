@@ -7,6 +7,7 @@
     <title>Document</title>
     <link href="navstyle.css" rel="stylesheet" type="text/css" />
     <link href="login.css" rel="stylesheet" type="text/css" />
+    <script src="login.js"></script>
   </head>
   <style>
     body {
@@ -86,11 +87,15 @@
       <p id="welcome">Welcome to Mini Stile!</p>
       <p id="log-in">Log-in and start your journey</p>
     </div>
+
     <div class="profile-container">
-      <form id="login-form" class="form">
-        <h1 class="form-title">Login</h1>
-        <div class="form-message">Incorrect username/password</div>
-        <div class="username-input">
+      <form class="form" id="login">
+        <h1 class="form-title">Log in</h1>
+        <br /><br />
+        <div class="form-message form-message-error">
+          Incorrect username/password
+        </div>
+        <div class="input-group">
           <input
             class="form-input"
             type="text"
@@ -98,8 +103,7 @@
             placeholder="Username or email"
           />
         </div>
-        <div class="form-message">Error message</div>
-        <div class="passwor-input">
+        <div class="input-group">
           <input
             class="form-input"
             type="password"
@@ -107,7 +111,7 @@
             placeholder="Password"
           />
         </div>
-        <button class="form-button" type="submit">Continue</button>
+        <button class="input-group" id="button" type="submit">Continue</button>
         <p class="form-text">
           <a href="#" class="form-link">Forgot you Password?</a>
         </p>
@@ -117,7 +121,52 @@
           </a>
         </p>
       </form>
+
+      <form class="form form--hidden" id="createAccount">
+        <h1 class="form-title">Create Account</h1>
+        <br /><br />
+        <div class="form-message form-message-error">
+          Incorrect username/password
+        </div>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-input"
+            autofocus
+            placeholder="Username"
+          />
+        </div>
+        <div class="input-group">
+          <input
+            class="form-input"
+            type="text"
+            autofocus
+            placeholder="Email Address"
+          />
+        </div>
+        <div class="input-group">
+          <input
+            class="form-input"
+            type="password"
+            autofocus
+            placeholder="Password"
+          />
+        </div>
+        <div class="input-group">
+          <input
+            class="form-input"
+            type="password"
+            autofocus
+            placeholder="Confirm Password"
+          />
+        </div>
+        <button class="input-group" id="button" type="submit">Continue</button>
+        <p class="form-text">
+          <a class="form-link" id="linkLogin">
+            Already have an account? Log in
+          </a>
+        </p>
+      </form>
     </div>
-    <script src="login.js"></script>
   </body>
 </html>
