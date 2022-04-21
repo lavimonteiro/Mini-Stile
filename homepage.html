@@ -92,22 +92,24 @@
       <form class="form" id="login">
         <h1 class="form-title">Log in</h1>
         <br /><br />
-        <div class="form-message form-message-error">
-          Incorrect username/password
-        </div>
+        <div class="form-message form-message-error login-error"></div>
         <div class="input-group">
           <input
             class="form-input"
+            name="username"
             type="text"
             autofocus
+            required
             placeholder="Username or email"
           />
         </div>
         <div class="input-group">
           <input
             class="form-input"
+            name="password"
             type="password"
             autofocus
+            required
             placeholder="Password"
           />
         </div>
@@ -125,13 +127,13 @@
       <form class="form form--hidden" id="createAccount">
         <h1 class="form-title">Create Account</h1>
         <br /><br />
-        <div class="form-message form-message-error">
-          Incorrect username/password
-        </div>
+        <div class="form-message form-message-error create-account-error"></div>
         <div class="input-group">
           <input
             type="text"
             class="form-input"
+            name="username"
+            required
             autofocus
             placeholder="Username"
           />
@@ -139,7 +141,9 @@
         <div class="input-group">
           <input
             class="form-input"
+            name="email"
             type="text"
+            required
             autofocus
             placeholder="Email Address"
           />
@@ -147,16 +151,20 @@
         <div class="input-group">
           <input
             class="form-input"
+            name="password"
             type="password"
             autofocus
+            required
             placeholder="Password"
           />
         </div>
         <div class="input-group">
           <input
             class="form-input"
+            name="password-confirm"
             type="password"
             autofocus
+            required
             placeholder="Confirm Password"
           />
         </div>

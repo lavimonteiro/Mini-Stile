@@ -5,6 +5,9 @@
       background-color: rgb(255, 255, 255);
       box-shadow: 0 0 10px #b7b7b7;
       border-radius: 5px;
+      align-items: center;
+      justify-content: center;
+      max-width: 700px;
     }
 
 .profile-container, .form-input, .form-button, #button {
@@ -54,7 +57,7 @@
 }
 
 #button {
-width: 105%;
+width: 100%;
 padding: 1rem 2rem;
 font-weight: Bold;
 background-color: rgb(95, 167, 23);
@@ -80,6 +83,7 @@ transform: scale(0.98)
 .form-link {
     color:  rgb(70, 122, 17);
     text-decoration: none;
+    cursor: pointer;
 }
 
 .form-link:hover{
