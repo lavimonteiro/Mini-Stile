@@ -11,7 +11,7 @@ function searchFunction(e) {
     var text = e.target.value.toLowerCase();
     let isLessonOneAMatch = false;
     let isLessonTwoAMatch = false;
-    let userInput = text.split(" ");
+    let userInput = text.split(/\W/g);
     console.log(userInput)
     console.log(lessonOneArr)
     console.log(lessonTwoArr)
