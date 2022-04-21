@@ -5,9 +5,11 @@
       background-color: rgb(255, 255, 255);
       box-shadow: 0 0 10px #b7b7b7;
       border-radius: 5px;
-      align-items: center;
-      justify-content: center;
+      text-align: center;
+      font-weight: 900;
+      color: rgb(54, 104, 4);
       max-width: 700px;
+      position: relative;
     }
 
 .profile-container, .form-input, .form-button, #button {
@@ -56,7 +58,7 @@
     background: white;
 }
 
-#button {
+#create-button, #login-button, #logout-button{
 width: 100%;
 padding: 1rem 2rem;
 font-weight: Bold;
