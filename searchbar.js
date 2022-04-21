@@ -1,21 +1,19 @@
-var input = document.getElementByClass("mySearch");
-let filter = input.value.toUpperCase();
-let lessons = document.getElementByClass("lessons");
-let lessonOne = lessons.getElementsByClass("lesson-one");
-let lessonTwo = lessons.getElementsByClass("lesson-two");
-let lessonOneContent = lessonOne.getElementsByClass("content");
-let lessonTwoContent = lessonTwo.getElementsByClass("content");
+var input = document.getElementById("mySearch");
+var filter = input.value.toUpperCase();
+var lessonOne = document.getElementById("lesson-one");
+var lessonOneContent = lessonOne.textContent;
+var lessonTwo = document.getElementById("lesson-two");
+var lessonTwoContent = lessonTwo.textContent;
 
-// function searchFunction() {
-//     console.log(input)
-//     var text = e.target.value;
-//     alert(text);
-// }
 
-input.addEventListener("keydown", function (e) {
-    if (e.key === "Enter"|| e.key === "Return") {  
-      console.log(input)
-    }
-  });
 
- 
+function searchFunction(e) {
+    var text = e.target.value;
+    console.log(text)
+}
+
+    input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            searchFunction(e);
+        }
+    });
