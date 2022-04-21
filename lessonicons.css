@@ -110,4 +110,9 @@
 }
 #noMatchesBanner{
   display:none;
+  font-family: sans-serif;
+  height: 80px;
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
 }
