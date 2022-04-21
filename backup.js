@@ -69,9 +69,8 @@ document.addEventListener("DOMContentLoaded", () =>{
             const loginForm = document.querySelector('#login');
             loginForm.classList.add("form--hidden")
 
-            const logoutForm = document.querySelector('#logout');
-            logoutForm.classList.remove("form--hidden")
-
+            let container = document.querySelector(".profile-container")
+            container.textContent = "Hello " + localStorage.getItem("username") + " you're logged in!"
         }
 
         else {
@@ -81,18 +80,12 @@ document.addEventListener("DOMContentLoaded", () =>{
     });
 });
 
-document.addEventListener("DOMContentLoaded", () =>{
-//what should i check for??
-    if (sessionStorage.length > 1){
-        document.forms["logout"].addEventListener("submit", e =>{
-            e.preventDefault();
-            sessionStorage.clear();
+// document.addEventListener("DOMContentLoaded", () =>{
+// if (sessionStorage){
+//     const loginForm = document.querySelector('#login');
+//     loginForm.classList.add("form--hidden")
 
-            const loginForm = document.querySelector('#login');
-            loginForm.classList.remove("form--hidden")
-            const logoutForm = document.querySelector('#logout');
-            logoutForm.classList.add("form--hidden")
-        });
-    }
-
-});
+//     let container = document.querySelector(".profile-container")
+//     container.textContent = "Hello " + localStorage.getItem("username") + " you're logged in!"
+//     }
+// });
