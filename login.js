@@ -1,3 +1,5 @@
+var hiddenClass = "form--hidden";
+
 function loginForm() {
     return document.forms["login"];
 };
@@ -6,102 +8,105 @@ function createAccountForm() {
     return document.forms["createAccount"];
 }
 
+function logoutForm(){
+    return document.querySelector('#logout');
+}
+
 function toggleCreateAccountLoginForms () {
     document.querySelector("#linkCreateAccount").addEventListener("click", e=> {
     e.preventDefault();
-    loginForm().classList.add("form--hidden")
-    createAccountForm().classList.remove("form--hidden")
+    loginForm().classList.add( hiddenClass)
+    createAccountForm().classList.remove( hiddenClass)
     });
 
     document.querySelector("#linkLogin").addEventListener("click", e=>{
     e.preventDefault();
-    loginForm().classList.remove("form--hidden")
-    createAccountForm().classList.add("form--hidden")
+    loginForm().classList.remove( hiddenClass)
+    createAccountForm().classList.add(hiddenClass)
     });
 }
 
 function storingCreatAccountDetails(){
     createAccountForm().addEventListener("submit", (event) => {
         event.preventDefault();
-
         let  inputs = document.querySelectorAll("#createAccount input");
-        
+    
         //check if passwords match 
         let passwordArray = [];
         inputs.forEach( input => {
             if (input.name === "password" || input.name === "password-confirm"){
                 passwordArray.push(input.value)
                 }
+        });
+
+        //saves information
+        if (passwordArray[0] === passwordArray[1]){
+            inputs.forEach( input => {
+                localStorage.setItem(input.name, input.value);
             });
-            if (passwordArray[0] === passwordArray[1]){
-                inputs.forEach( input => {
-                    localStorage.setItem(input.name, input.value);
-                });
 
-                loginForm().classList.remove("form--hidden")
-                createAccountForm().classList.add("form--hidden")
-                console.log(localStorage)
+            loginForm().classList.remove( hiddenClass)
+            createAccountForm().classList.add( hiddenClass)
+            console.log(localStorage)
 
-                const usernameInput = document.getElementsByName("username");
-                console.log(usernameInput, usernameInput.value)
+            const usernameInput = document.getElementsByName("username");
+            console.log(usernameInput, usernameInput.value)
 
-            }
-            else {
+        }
+        else {
             let messageElement = document.querySelector(".create-account-error")
             messageElement.textContent = "Password does not match. Please Try again."
-            }
-        })
+        }
+    })
 }
-
-document.addEventListener("DOMContentLoaded", toggleCreateAccountLoginForms);
-document.addEventListener("DOMContentLoaded", storingCreatAccountDetails);
-
-
-document.addEventListener("DOMContentLoaded", () =>{
-    document.forms["login"].addEventListener("submit", (event) => {
+function saveLoginInformation (){
+    loginForm().addEventListener("submit", (event) => {
         event.preventDefault();
+
         let informationArray = [];
         let  inputs = document.querySelectorAll("#login input");
         inputs.forEach( input => {
             informationArray.push(input.value);
-            });
+        });
 
         if (localStorage.getItem("username") === informationArray[0] && localStorage.getItem("password") === informationArray[1]){
             let messageElement = document.querySelector(".login-error")
             messageElement.textContent = ""
 
             sessionStorage.setItem("login successful", localStorage.getItem("username"))
-            console.log(sessionStorage)
 
-            loginForm().classList.add("form--hidden")
-            const logoutForm = document.querySelector('#logout');
-            logoutForm.classList.remove("form--hidden")
+            loginForm().classList.add(hiddenClass)
+            logoutForm().classList.remove(hiddenClass)
 
         }
-
         else {
             let messageElement = document.querySelector(".login-error")
             messageElement.textContent = "Invalid username or password."
          }
     });
-});
+}
 
-document.addEventListener("DOMContentLoaded", () =>{
-//what should i check for??
+function formWhileLoggedIn(){
     if (sessionStorage.length > 1){
-        loginForm().classList.add("form--hidden")
-            const logoutForm = document.querySelector('#logout');
-            logoutForm.classList.remove("form--hidden")
+        loginForm().classList.add(hiddenClass)
+        logoutForm().classList.remove(hiddenClass)
 
-        document.forms["logout"].addEventListener("submit", e =>{
-            e.preventDefault();
-            sessionStorage.clear();
-
-            const loginForm = document.querySelector('#login');
-            loginForm.classList.remove("form--hidden")
-            const logoutForm = document.querySelector('#logout');
-            logoutForm.classList.add("form--hidden")
-        });
+            logoutForm().addEventListener("submit", e =>{
+                e.preventDefault();
+                sessionStorage.clear();
+                loginForm().classList.remove(hiddenClass)
+                logoutForm().classList.add(hiddenClass)
+            });
     }
+}
 
-});
+let functionArray = [toggleCreateAccountLoginForms, storingCreatAccountDetails, saveLoginInformation, formWhileLoggedIn];
+
+for (i = 0; i < functionArray.length; i++){
+    document.addEventListener("DOMContentLoaded", functionArray[i]);
+}
+
+// document.addEventListener("DOMContentLoaded", toggleCreateAccountLoginForms);
+// document.addEventListener("DOMContentLoaded", storingCreatAccountDetails);
+// document.addEventListener("DOMContentLoaded", saveLoginInformation);
+// document.addEventListener("DOMContentLoaded", formWhileLoggedIn);
