@@ -13,6 +13,7 @@
     body {
       background-color: rgb(241, 241, 241);
       margin: 0;
+      padding: 0;
     }
     .banner {
       display: block;
@@ -47,12 +48,25 @@
       -webkit-text-stroke: 2px rgb(54, 104, 4);
     }
 
+    .background-img {
+      background-image: url("Screen Shot 2022-04-22 at 2.58.55 pm.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 60vh;
+      height: 100vh;
+      float: left;
+    }
+
     #welcome {
       font-size: 80px;
       font-weight: 500;
     }
 
     #log-in {
+      font-size: 40px;
+    }
+
+    .text {
       font-size: 40px;
     }
   </style>
@@ -83,8 +97,17 @@
       />
       <div class="center-text">Stile</div>
     </div>
+    <div class="background-img"></div>
     <div class="welcome-text">
       <p id="welcome">Welcome to Mini Stile!</p>
+      <br /><br />
+      <div class="text">
+        <p>The buggier but cooler,</p>
+        <p>somewhat functional version of Stile</p>
+        <br /><br /><br />
+        <p>Made by Stile's best Employees :)</p>
+        <br /><br />
+      </div>
     </div>
   </body>
 </html>
