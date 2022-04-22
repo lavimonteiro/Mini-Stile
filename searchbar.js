@@ -1,21 +1,57 @@
-var input = document.getElementByClass("mySearch");
-let filter = input.value.toUpperCase();
-let lessons = document.getElementByClass("lessons");
-let lessonOne = lessons.getElementsByClass("lesson-one");
-let lessonTwo = lessons.getElementsByClass("lesson-two");
-let lessonOneContent = lessonOne.getElementsByClass("content");
-let lessonTwoContent = lessonTwo.getElementsByClass("content");
+var input = document.getElementById("mySearch");
+var lessonOne = document.getElementById("lesson-one");
+var lessonOneContent = lessonOne.textContent.toLowerCase();
+var lessonOneNoSpecialCharacters = lessonOneContent.replace(/[^a-zA-Z0-9 ]/g, "")
+var lessonOneArr= lessonOneNoSpecialCharacters.split(" ")
+var lessonTwo = document.getElementById("lesson-two");
+var lessonTwoContent = lessonTwo.textContent.toLowerCase();
+var lessonTwoNoSpecialCharacters = lessonTwoContent.replace(/[^a-zA-Z0-9 ]/g, "")
+var lessonTwoArr = lessonTwoNoSpecialCharacters.split(" ")
+var noMatchesBanner = document.getElementById("noMatchesBanner")
 
-// function searchFunction() {
-//     console.log(input)
-//     var text = e.target.value;
-//     alert(text);
-// }
+function search(e) {
+    var text = e.target.value.toLowerCase();
+    let isLessonOneAMatch = false;
+    let isLessonTwoAMatch = false;
+    let userInputNoSpecialCharacters = text.replace(/[^a-zA-Z0-9 ]/g, "")
+    let userInput = userInputNoSpecialCharacters.split(" ");
+    console.log(userInput); 
+   for (let i = 0; i < userInput.length; i++) {
+       for (let j = 0; j < lessonOneArr.length; j++) {
+           if (lessonOneArr[j].includes(userInput[i])){
+        isLessonOneAMatch =  true
+           }
+         };
+       for (let k = 0; k < lessonTwoArr.length; k++) {
+           if(lessonTwoArr[k].includes(userInput[i])){
+        isLessonTwoAMatch =  true
+             }
+         };
+       if (isLessonOneAMatch === true && isLessonTwoAMatch === true) {
+            lessonOne.style.display = "block";
+           lessonTwo.style.display = "block";
+           noMatchesBanner.style.display = "none";
+       } else
+           if (isLessonTwoAMatch === true) {
+              lessonOne.style.display = "none";
+               lessonTwo.style.display = "block";
+               noMatchesBanner.style.display = "none";
+           } else
+               if (isLessonOneAMatch === true) {
+                lessonOne.style.display = "block";
+                   lessonTwo.style.display = "none";
+                   noMatchesBanner.style.display = "none";
+               } else {
+                lessonOne.style.display = "none";
+                   lessonTwo.style.display = "none";
+                   noMatchesBanner.style.display = "block";
+                
+               }
+   }
+}
 
-input.addEventListener("keydown", function (e) {
-    if (e.key === "Enter"|| e.key === "Return") {  
-      console.log(input)
-    }
-  });
-
- 
+    input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            search(e);
+        }
+    });

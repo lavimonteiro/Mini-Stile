@@ -1,4 +1,3 @@
-
 function loginForm() {
     return document.forms["login"];
 };
@@ -58,7 +57,7 @@ document.addEventListener("DOMContentLoaded", toggleCreateAccountLoginForms);
 document.addEventListener("DOMContentLoaded", storingCreatAccountDetails);
 
 
-    document.addEventListener("DOMContentLoaded", () =>{
+document.addEventListener("DOMContentLoaded", () =>{
     document.forms["login"].addEventListener("submit", (event) => {
         event.preventDefault();
         let informationArray = [];
