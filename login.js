@@ -94,8 +94,6 @@ document.addEventListener("DOMContentLoaded", () =>{
             const logoutForm = document.querySelector('#logout');
             logoutForm.classList.remove("form--hidden")
 
-
-
         document.forms["logout"].addEventListener("submit", e =>{
             e.preventDefault();
             sessionStorage.clear();
