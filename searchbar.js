@@ -15,7 +15,6 @@ function search(e) {
     let isLessonTwoAMatch = false;
     let userInputNoSpecialCharacters = text.replace(/[^a-zA-Z0-9 ]/g, "")
     let userInput = userInputNoSpecialCharacters.split(" ");
-    console.log(userInput); 
    for (let i = 0; i < userInput.length; i++) {
        for (let j = 0; j < lessonOneArr.length; j++) {
            if (lessonOneArr[j].includes(userInput[i])){
