@@ -15,5 +15,5 @@ let onIconClick = function() {
     }
   }
 for (i = 0; i < icon.length; i++) {
-    icon[i].addEventListener("click", onIconClick);
+  icon[i].addEventListener("click",onIconClick);
 }
