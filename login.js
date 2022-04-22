@@ -49,9 +49,6 @@ function storingCreatAccountDetails(){
             createAccountForm().classList.add( hiddenClass)
             console.log(localStorage)
 
-            const usernameInput = document.getElementsByName("username");
-            console.log(usernameInput, usernameInput.value)
-
         }
         else {
             let messageElement = document.querySelector(".create-account-error")
@@ -59,6 +56,7 @@ function storingCreatAccountDetails(){
         }
     })
 }
+
 function saveLoginInformation (){
     loginForm().addEventListener("submit", (event) => {
         event.preventDefault();
@@ -74,9 +72,11 @@ function saveLoginInformation (){
             messageElement.textContent = ""
 
             sessionStorage.setItem("login successful", localStorage.getItem("username"))
+            console.log(sessionStorage);
 
             loginForm().classList.add(hiddenClass)
             logoutForm().classList.remove(hiddenClass)
+
 
         }
         else {
@@ -96,6 +96,12 @@ function formWhileLoggedIn(){
                 sessionStorage.clear();
                 loginForm().classList.remove(hiddenClass)
                 logoutForm().classList.add(hiddenClass)
+
+            //clear input values
+                const inputValues = document.querySelectorAll(".form-input")
+                inputValues.forEach(input => {
+                input.value = '';
+            })
             });
     }
 }
