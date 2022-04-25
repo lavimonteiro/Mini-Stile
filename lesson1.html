@@ -8,6 +8,13 @@
     <link href="navstyle.css" rel="stylesheet" type="text/css" />
   </head>
   <style>
+    #whale-pic{
+      width: 80vh;
+    }
+     #mustache-pic {
+        position: absolute;
+        width: 20vh;
+      }
         body {
       background-color: rgb(241, 241, 241);
       margin: 0;}
@@ -33,5 +40,34 @@
       </div>
     </header>
     </div>
+    <p>
+      in this lesson you must click to draw on a mustache onto this very
+      cute killer whale!
+    </p>
+    
+    <img
+      id="mustache-pic"
+      src="https://www.pinclipart.com/picdir/big/521-5219414_vector-mustache-clipart-best-cartoon-mustache-transparent-background.png"
+      alt="stache"
+    />
+    <div id="whaleImg">
+    <img
+      id="whale-pic"
+      src="https://storage.googleapis.com/afs-prod/media/cbfb8410c60d403eab312fe535025d28/3000.jpeg"
+      alt=" very cute killer whale"
+    /></div>
+    <script>
+      var whalePic = document.getElementById("whale-pic");
+      var onWhaleClick = function (e) {
+        var stashePic = document.getElementById("mustache-pic");
+        var height = stashePic.height;
+        var width = stashePic.width;
+        console.log(e)
+        stashePic.style.top = e.pageY - (height/3) + "px";
+        stashePic.style.left = e.pageX - (width/2) + "px";
+     
+      };
+      whalePic.addEventListener("click", onWhaleClick);
+    </script>
   </body>
 </html>
