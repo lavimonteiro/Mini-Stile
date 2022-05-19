@@ -25,14 +25,14 @@ function search(e) {
            if(lessonTwoArr[k].includes(userInput[i])){
         isLessonTwoAMatch =  true
              }
-         };
+       };
        if (isLessonOneAMatch === true && isLessonTwoAMatch === true) {
-            lessonOne.style.display = "block";
+           lessonOne.style.display = "block";
            lessonTwo.style.display = "block";
            noMatchesBanner.style.display = "none";
        } else
            if (isLessonTwoAMatch === true) {
-              lessonOne.style.display = "none";
+               lessonOne.style.display = "none";
                lessonTwo.style.display = "block";
                noMatchesBanner.style.display = "none";
            } else
