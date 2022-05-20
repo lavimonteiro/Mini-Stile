@@ -21,8 +21,6 @@ get '/lesson2' do
     send_file '../lesson2.html'
 end
 
-
-
 get '/javascript/login.js' do
     send_file '../javascript/login.js'
 end
