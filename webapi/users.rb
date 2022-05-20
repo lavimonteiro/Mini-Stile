@@ -26,11 +26,12 @@ namespace '/api/v1' do
     end
   end
 
-  get '/login' do  
+  post '/login' do  
     login_data = json_params
     login = DB.fetch("SELECT * FROM users WHERE username = '#{login_data['username']}' && password = '#{login_data['password']}'").all
 
     if login.length >= 1
+      
         halt(200, { message:'log-in successful'}.to_json)
         #make so that the logged in box appears
     else
@@ -46,7 +47,6 @@ namespace '/api/v1' do
     if account.length < 1 
       create = DB.execute("INSERT INTO users (username, email, password) VALUES ('#{login_data['username']}','#{login_data['email']}','#{login_data['password']}')")
       halt(200, { message:'account created'}.to_json)
-      #redirect to login page (is there a way of completing log-in automatically??)
     else 
       halt(424, { message:'Invalid data input' }.to_json)
     end  
