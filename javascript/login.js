@@ -33,22 +33,40 @@ function storingCreatAccountDetails(){
     
         //check if passwords match 
         let passwordArray = [];
+        let username = "";
+        let email = "";
         inputs.forEach( input => {
             if (input.name === "password" || input.name === "password-confirm"){
                 passwordArray.push(input.value)
-                }
+            }
+
+            if (input.name === "username"){
+                username = input.value
+            }
+
+            if (input.name === "email"){
+                email = input.value
+            }            
         });
 
+       
         //saves information
         if (passwordArray[0] === passwordArray[1]){
-            inputs.forEach( input => {
-                localStorage.setItem(input.name, input.value);
-            });
 
-            loginForm().classList.remove( hiddenClass)
-            createAccountForm().classList.add( hiddenClass)
-            console.log(localStorage)
+            fetch('http://localhost:4567/api/v1/user', {
+                method: 'PUT', 
+                body: JSON.stringify({'username': username, 'email': email, 'password': passwordArray[0]})
+            })
+            .then(response => response.json())
+            .then(data => console.log(data));
 
+            // inputs.forEach( input => {
+            //     localStorage.setItem(input.name, input.value);
+            // });
+
+            // loginForm().classList.remove( hiddenClass)
+            // createAccountForm().classList.add( hiddenClass)
+            // console.log(localStorage)
         }
         else {
             let messageElement = document.querySelector(".create-account-error")
