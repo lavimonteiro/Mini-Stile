@@ -58,15 +58,16 @@ function storingCreatAccountDetails(){
                 body: JSON.stringify({'username': username, 'email': email, 'password': passwordArray[0]})
             })
             .then(response => response.json())
-            .then(data => console.log(data));
-
-            // inputs.forEach( input => {
-            //     localStorage.setItem(input.name, input.value);
-            // });
-
-            // loginForm().classList.remove( hiddenClass)
-            // createAccountForm().classList.add( hiddenClass)
-            // console.log(localStorage)
+            .then(data => {
+                if(data.message == "account created"){
+                    loginForm().classList.remove( hiddenClass)
+                    createAccountForm().classList.add( hiddenClass)
+                }
+                else {
+                    let messageElement = document.querySelector(".create-account-error")
+                    messageElement.textContent = "Failed to create Account. Please Try again."
+                }
+            });
         }
         else {
             let messageElement = document.querySelector(".create-account-error")
@@ -85,33 +86,41 @@ function saveLoginInformation (){
             informationArray.push(input.value);
         });
 
-        if (localStorage.getItem("username") === informationArray[0] && localStorage.getItem("password") === informationArray[1]){
-            let messageElement = document.querySelector(".login-error")
-            messageElement.textContent = ""
+        fetch('http://localhost:4567/api/v1/login', {
+                method: 'POST', 
+                body: JSON.stringify({'username': informationArray[0], 'password': informationArray[1]})
+            })
+            .then(response => response.json())
+            .then(data => { 
+                if(data.message == "log-in successful"){
+                    let messageElement = document.querySelector(".login-error")
+                    messageElement.textContent = ""
 
-            sessionStorage.setItem("login successful", localStorage.getItem("username"))
-            console.log(sessionStorage);
+                    sessionStorage.setItem("access-token", informationArray[0])
 
-            loginForm().classList.add(hiddenClass)
-            logoutForm().classList.remove(hiddenClass)
-
-
-        }
-        else {
-            let messageElement = document.querySelector(".login-error")
-            messageElement.textContent = "Invalid username or password."
-         }
+                    loginForm().classList.add(hiddenClass)
+                    logoutForm().classList.remove(hiddenClass)
+                    console.log("sucess", sessionStorage.getItem("access-token"))
+                }
+                else{
+                    let messageElement = document.querySelector(".login-error")
+                    messageElement.textContent = "Invalid username or password."
+                    console.log("failed", sessionStorage)
+                }
+            })
     });
 }
 
 function formWhileLoggedIn(){
-    if (sessionStorage.length > 1){
+
+    if (sessionStorage.length >= 1){
         loginForm().classList.add(hiddenClass)
         logoutForm().classList.remove(hiddenClass)
 
             logoutForm().addEventListener("submit", e =>{
                 e.preventDefault();
                 sessionStorage.clear();
+                console.log(sessionStorage)
                 loginForm().classList.remove(hiddenClass)
                 logoutForm().classList.add(hiddenClass)
 
@@ -129,8 +138,3 @@ let functionArray = [toggleCreateAccountLoginForms, storingCreatAccountDetails, 
 for (i = 0; i < functionArray.length; i++){
     document.addEventListener("DOMContentLoaded", functionArray[i]);
 }
-
-// document.addEventListener("DOMContentLoaded", toggleCreateAccountLoginForms);
-// document.addEventListener("DOMContentLoaded", storingCreatAccountDetails);
-// document.addEventListener("DOMContentLoaded", saveLoginInformation);
-// document.addEventListener("DOMContentLoaded", formWhileLoggedIn);

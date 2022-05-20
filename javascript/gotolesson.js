@@ -1,9 +1,9 @@
 var lessonOneButton = document.getElementsByClassName("goToLessonOne");
 var i;
 let onLessonOneButtonClick = function () {
-    if (sessionStorage.length > 1) {
+    if (sessionStorage.length >= 1) {
         window.location.href = 'lesson1.html';
-    } else { window.location.href = 'profile.html';
+    } else { window.location.href = '/profile';
      
     }
   }
@@ -14,9 +14,9 @@ for (i = 0; i < lessonOneButton.length; i++) {
 var lessonTwoButton = document.getElementsByClassName("goToLessonTwo");
 var i;
 let onLessonTwoButtonClick = function () {
-    if (sessionStorage.length > 1) {
+    if (sessionStorage.length >= 1) {
         window.location.href = 'lesson2.html';
-    } else { window.location.href = 'profile.html';
+    } else { window.location.href = '/profile';
      
     }
   }
