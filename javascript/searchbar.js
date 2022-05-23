@@ -1,12 +1,12 @@
 var input = document.getElementById("mySearch");
-var lessonOne = document.getElementById("lesson-one");
-var lessonOneContent = lessonOne.textContent.toLowerCase();
-var lessonOneNoSpecialCharacters = lessonOneContent.replace(/[^a-zA-Z0-9 ]/g, "")
-var lessonOneArr= lessonOneNoSpecialCharacters.split(" ")
-var lessonTwo = document.getElementById("lesson-two");
-var lessonTwoContent = lessonTwo.textContent.toLowerCase();
-var lessonTwoNoSpecialCharacters = lessonTwoContent.replace(/[^a-zA-Z0-9 ]/g, "")
-var lessonTwoArr = lessonTwoNoSpecialCharacters.split(" ")
+var lessonOne = document.getElementById("lesson-one")
+.textContent.toLowerCase()
+.replace(/[^a-zA-Z0-9 ]/g, "")
+.split(" ")
+var lessonTwo = document.getElementById("lesson-two")
+.textContent.toLowerCase()
+.replace(/[^a-zA-Z0-9 ]/g, "")
+.split(" ")
 var noMatchesBanner = document.getElementById("noMatchesBanner")
 
 function search(e) {
