@@ -100,7 +100,7 @@ function saveLoginInformation (){
 
                     loginForm().classList.add(hiddenClass)
                     logoutForm().classList.remove(hiddenClass)
-                    console.log("sucess", sessionStorage.getItem("access-token"))
+                    console.log("success", sessionStorage.getItem("access-token"))
                 }
                 else{
                     let messageElement = document.querySelector(".login-error")
