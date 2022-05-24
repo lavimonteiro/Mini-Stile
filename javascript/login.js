@@ -53,7 +53,7 @@ function storingCreatAccountDetails(){
         //saves information
         if (passwordArray[0] === passwordArray[1]){
 
-            fetch('http://localhost:4567/api/v1/user', {
+            fetch('/api/v1/user', {
                 method: 'PUT', 
                 body: JSON.stringify({'username': username, 'email': email, 'password': passwordArray[0]})
             })
@@ -86,7 +86,7 @@ function saveLoginInformation (){
             informationArray.push(input.value);
         });
 
-        fetch('http://localhost:4567/api/v1/login', {
+        fetch('/api/v1/login', {
                 method: 'POST', 
                 body: JSON.stringify({'username': informationArray[0], 'password': informationArray[1]})
             })

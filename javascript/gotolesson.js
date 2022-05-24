@@ -2,7 +2,12 @@ var lessonOneButton = document.getElementsByClassName("goToLessonOne");
 var i;
 let onLessonOneButtonClick = function () {
     if (sessionStorage.length >= 1) {
-        window.location.href = '/lesson1';
+        window.location.href = '/lesson';
+        fetch("/api/v1/library/lesson/all%20about%20killer%20whales")
+            .then(response => response.json())
+            .then(data => 
+                console.log(data)
+                );
     } else { window.location.href = '/profile';
      
     }
@@ -15,7 +20,11 @@ var lessonTwoButton = document.getElementsByClassName("goToLessonTwo");
 var i;
 let onLessonTwoButtonClick = function () {
     if (sessionStorage.length >= 1) {
-        window.location.href = '/lesson2';
+        window.location.href = '/lesson';
+        fetch("/api/v1/library/lesson/all%20about%20cats")
+        .then(response => response.json())
+            .then(data => 
+                console.log(data))
     } else { window.location.href = '/profile';
      
     }

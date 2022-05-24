@@ -17,6 +17,10 @@ get '/lesson1' do
     send_file '../lesson1.html'
 end
 
+get '/lesson' do
+    send_file '../lesson.html'
+end
+
 get '/lesson2' do
     send_file '../lesson2.html'
 end
