@@ -40,16 +40,16 @@ namespace '/api/v1' do
     end
   end 
 
-  put '/user' do
+  put '/user'     do
     login_data = json_params
     account = DB.fetch("SELECT * FROM users WHERE username = '#{login_data['username']}' OR email = '#{login_data['email']}'").all
 
     if account.length < 1 
-      create = DB.execute("INSERT INTO users (username, email, password) VALUES ('#{login_data['username']}','#{login_data['email']}','#{login_data['password']}')")
+      DB.execute("INSERT INTO users (username, email, password) VALUES ('#{login_data['username']}','#{login_data['email']}','#{login_data['password']}')")
       halt(200, { message:'account created'}.to_json)
     else 
-      halt(424, { message:'Invalid data input' }.to_json)
-    end  
+      halt(424, { message:'Invalid data input'}.to_json)
+        end  
   end 
 
 end
