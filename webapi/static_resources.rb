@@ -52,3 +52,4 @@ end
 get '/images/homepage.png' do
     send_file '../images/homepage.png'
 end
+
