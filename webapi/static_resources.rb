@@ -26,7 +26,7 @@ get '/javascript/login.js' do
 end
 
 get '/javascript/lessononeonclick.js' do
-    send_file '..javascript/lessononeonclick.js'
+    send_file '../javascript/lessononeonclick.js'
 end
 
 get '/javascript/gotolesson.js' do
@@ -42,7 +42,7 @@ get '/css/login.css' do
 end
 
 get '/css/lessonicons.css' do
-    send_file '..css/lessonicons.css'
+    send_file '../css/lessonicons.css'
 end
 
 get '/css/navstyle.css' do
@@ -53,3 +53,6 @@ get '/images/homepage.png' do
     send_file '../images/homepage.png'
 end
 
+get '/images/bowtie.png' do
+    send_file '../images/bowtie.png'
+end 
