@@ -49,7 +49,7 @@ namespace '/api/v1' do
       halt(200, { message:'account created'}.to_json)
     else 
       halt(424, { message:'Invalid data input'}.to_json)
-        end  
+    end  
   end 
 
 end
