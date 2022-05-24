@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LESSON TITLE</title>
+    <link href="css/navstyle.css" rel="stylesheet" type="text/css" />
+  </head>
+  <style>
+    #base-pic{
+      width: 80vh;
+    }
+     #ontop-pic {
+        position: absolute;
+        width: 20vh;
+      }
+        body {
+          background-color: rgb(241, 241, 241);
+      margin: 0;
+      text-align: center;
+    font-family:sans-serif;}
+      
+  </style>
+  <body>
+  <header>
+      <div class="navbar">
+        <nav>
+          <ul>
+            <li class="menu-item"></li>
+            <li id="home-link" class="menu-item">
+              <a class="navlinks" href="/">Home</a>
+            </li>
+            <li id="profile-link" class="menu-item">
+              <a class="navlinks" href="/profile">Profile</a>
+            </li>
+            <li id="library-link" class="menu-item">
+              <a class="navlinks" href="/library">Library</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <h1>LESSON TITLE</h1>
+    </div>
+    <p>
+      LESSON TEXT CONTENT
+    </p>
+    
+    <img
+      id="ontop-pic"
+      src=IMAGE_URL
+      alt=IMAGE_DESCRIPTION
+    />
+    <div id="baseImg">
+    <img
+      id="base-pic"
+      src=IMAGE_URL
+      alt=IMAGE_DESCRIPTION
+    /></div>
+    <script>
+      var basePic = document.getElementById("base-pic");
+      var onBaseClick = function (e) {
+        var onTopPic = document.getElementById("ontop-pic");
+        var height = onTopPic.height;
+        var width = onTopPic.width;
+        console.log(e)
+        onTopPic.style.top = e.pageY - (height/3) + "px";
+        onTopPic.style.left = e.pageX - (width/2) + "px";
+     
+      };
+      basePic.addEventListener("click", onBaseClick);
+    </script>
+  </body>
+</html>
