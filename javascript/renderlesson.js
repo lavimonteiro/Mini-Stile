@@ -11,9 +11,9 @@ function getLessonData(lessonUrl) {
         heading.innerHTML = data.lesson_title;
         textContent.innerHTML = data.text_content;
         baseImg.src = data.base_url;
-        onTopImg.src = data.ontop_url;
+        onTopImg.src = data.on_top_url;
         baseImg.alt = data.base_alt;
-        onTopImg.alt = data.ontop_alt;
+        onTopImg.alt = data.on_top_alt;
     });
 }
 
