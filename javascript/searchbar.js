@@ -1,10 +1,10 @@
 var input = document.getElementById("mySearch");
 var lessonOne = document.getElementById("lesson-one")
-.textContent.toLowerCase()
+var lessonOneArr = lessonOne.textContent.toLowerCase()
 .replace(/[^a-zA-Z0-9 ]/g, "")
 .split(" ")
 var lessonTwo = document.getElementById("lesson-two")
-.textContent.toLowerCase()
+var lessonTwoArr = lessonTwo.textContent.toLowerCase()
 .replace(/[^a-zA-Z0-9 ]/g, "")
 .split(" ")
 var noMatchesBanner = document.getElementById("noMatchesBanner")
