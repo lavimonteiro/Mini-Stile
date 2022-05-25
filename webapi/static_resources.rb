@@ -17,12 +17,20 @@ get '/lesson1' do
     send_file '../lesson1.html'
 end
 
+get '/lesson' do
+    send_file '../lesson.html' 
+end
+
 get '/lesson2' do
     send_file '../lesson2.html'
 end
 
 get '/javascript/login.js' do
     send_file '../javascript/login.js'
+end
+
+get '/javascript/renderlesson.js' do
+    send_file '../javascript/renderlesson.js'
 end
 
 get '/javascript/lessononeonclick.js' do

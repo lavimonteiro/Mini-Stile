@@ -39,10 +39,10 @@ namespace '/api/v1' do
         halt(404, { message:'Lesson Not Found'}.to_json) unless card.length>0
        
         card = card[0]
-        lesson_title = card["lesson_title".to_sym].to_json
+        lesson_title = card["lesson_name".to_sym].to_json
         text_content = card["text_content".to_sym].to_json
-        image = card["image_url"].to_json
-        alt_text = card["description"].to_json
+        image = card["image_url".to_sym].to_json
+        alt_text = card["description".to_sym].to_json
     end
 
     get '/library/lesson/:name' do |name|
@@ -55,13 +55,19 @@ namespace '/api/v1' do
         WHERE lessons.lesson_name = '#{name}' ;
         ").all
         halt(404, { message:'Lesson Not Found'}.to_json) unless lesson.length>0
-       lesson.to_json + lesson.to_json 
         lesson = lesson[0]
-        lesson_title = lesson["lesson_title".to_sym].to_json
+        lesson_title = lesson["lesson_name".to_sym].to_json
         text_content = lesson["text_content".to_sym].to_json
-        
-        #image[0]
-         images.to_json
+
+        base = images[0]
+        base_url = base["image_url".to_sym].to_json
+        base_alt = base["description".to_sym].to_json
+        ontop = images[1]
+        ontop_url = ontop["image_url".to_sym].to_json
+        ontop_alt = ontop["description".to_sym].to_json
+        puts "HHHHHEEEEEELLLLLLLOOOOOOOO"
+        lesson_title +  text_content + base_url + base_alt
+        { "lesson_title":"#{lesson['lesson_name'.to_sym]}", "text_content":"#{lesson['text_content'.to_sym]}", "base_url":"#{base['image_url'.to_sym]}" , "base_alt": "#{base['description'.to_sym]}", "ontop_url":"#{ontop['image_url'.to_sym]}" , "ontop_alt":"#{ontop['description'.to_sym]}" }.to_json
     end
 
     get '/lesson/:name' do |name|

@@ -11,7 +11,7 @@
     #base-pic{
       width: 80vh;
     }
-     #ontop-pic {
+     #on-top-pic {
         position: absolute;
         width: 20vh;
       }
@@ -41,27 +41,27 @@
         </nav>
       </div>
     </header>
-    <h1>LESSON TITLE</h1>
+    <h1 id = "lesson-title">LESSON TITLE</h1>
     </div>
-    <p>
+    <p id = "text-content">
       LESSON TEXT CONTENT
     </p>
     
     <img
-      id="ontop-pic"
-      src=IMAGE_URL
+      id="on-top-pic"
+      src="https://i.gifer.com/ZZ5H.gif"
       alt=IMAGE_DESCRIPTION
     />
     <div id="baseImg">
     <img
       id="base-pic"
-      src=IMAGE_URL
+      src=""
       alt=IMAGE_DESCRIPTION
     /></div>
     <script>
       var basePic = document.getElementById("base-pic");
       var onBaseClick = function (e) {
-        var onTopPic = document.getElementById("ontop-pic");
+        var onTopPic = document.getElementById("on-top-pic");
         var height = onTopPic.height;
         var width = onTopPic.width;
         console.log(e)
@@ -72,4 +72,5 @@
       basePic.addEventListener("click", onBaseClick);
     </script>
   </body>
+  <script src="javascript/renderlesson.js" defer type="module"></script>
 </html>
