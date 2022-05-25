@@ -67,7 +67,7 @@ namespace '/api/v1' do
         ontop_alt = ontop["description".to_sym].to_json
         puts "HHHHHEEEEEELLLLLLLOOOOOOOO"
         lesson_title +  text_content + base_url + base_alt
-        { "lesson_title":"#{lesson['lesson_name'.to_sym]}", "text_content":"#{lesson['text_content'.to_sym]}", "base_url":"#{base['image_url'.to_sym]}" , "base_alt": "#{base['description'.to_sym]}", "ontop_url":"#{ontop['image_url'.to_sym]}" , "ontop_alt":"#{ontop['description'.to_sym]}" }.to_json
+        { "lesson_title":"#{lesson['lesson_name'.to_sym]}", "text_content":"#{lesson['text_content'.to_sym]}", "base_url":"#{base['image_url'.to_sym]}" , "base_alt": "#{base['description'.to_sym]}", "on_top_url":"#{ontop['image_url'.to_sym]}" , "on_top_alt":"#{ontop['description'.to_sym]}" }.to_json
     end
 
     get '/lesson/:name' do |name|
