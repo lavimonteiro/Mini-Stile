@@ -19,6 +19,9 @@ end
 get '/javascript/login.js' do
     send_file '../javascript/login.js'
 end
+get '/javascript/showuser.js' do
+send_file '../javascript/showuser.js'
+end
 
 get '/javascript/renderlesson.js' do
     send_file '../javascript/renderlesson.js'

@@ -117,7 +117,7 @@ function saveLoginInformation() {
 }
 
 function formWhileLoggedIn() {
-  if (sessionStorage.length >= 1) {
+    if (sessionStorage.length >= 1) {
     loginForm().classList.add(hiddenClass);
     logoutForm().classList.remove(hiddenClass);
 
