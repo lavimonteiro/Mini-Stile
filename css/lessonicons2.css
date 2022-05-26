@@ -1,0 +1,76 @@
+--background-color: rgb(241, 241, 241);
+
+body {
+  background-color: var(--background-color);
+}
+
+.lesson-card {
+  --gap: 16px;
+  --num-cols: 2;
+  --row-height: 300px;
+
+  margin-right: 15%;
+  margin-left: 15%;
+
+  box-sizing: border-box;
+  padding: var(--gap);
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+}
+
+.img {
+  --row-height: 300px;
+  overflow: hidden;
+  width: 100%;
+  max-height: var(--row-height);
+
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  --num-cols: 1;
+  --row-height: 200px;
+}
+
+.icon {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--background-color);
+}
+
+.noListDeco {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.content {
+  padding: 18px 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #a7a7a7;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.content {
+  padding: 18px 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #a7a7a7;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.lesson {
+  position: relative;
+}
+
+.lesson:after {
+  color: red;
+}
