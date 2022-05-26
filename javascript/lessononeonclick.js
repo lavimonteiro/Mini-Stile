@@ -4,6 +4,13 @@ let onIconClick = function () {
   this.classList.toggle("active");
   var content = this.nextElementSibling;
   var overlay = content.nextElementSibling;
+<<<<<<< HEAD
+=======
+
+  console.log(content);
+  console.log(overlay);
+
+>>>>>>> de48e26a8bb6609253172eeebef570d412ac99f5
   if (content.style.display === "block" || content.style.maxHeight) {
     content.style.display = "none";
     content.style.maxHeight = null;
