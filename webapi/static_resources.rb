@@ -12,9 +12,6 @@ get '/library' do
     send_file '../library.html'
 end
 
-get '/library2' do
-    send_file '../library2.html'
-end
 
 get '/lesson' do
     send_file '../lesson.html' 
@@ -49,10 +46,6 @@ end
 
 get '/css/lessonicons.css' do
     send_file '../css/lessonicons.css'
-end
-
-get '/css/lessonicons2.css' do
-    send_file '../css/lessonicons2.css'
 end
 
 get '/css/navstyle.css' do
