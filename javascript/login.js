@@ -118,30 +118,30 @@ function saveLoginInformation() {
 
 function formWhileLoggedIn() {
     if (sessionStorage.length >= 1) {
-    loginForm().classList.add(hiddenClass);
-    logoutForm().classList.remove(hiddenClass);
+        document.getElementById("log-in").innerHTML = "Welcome " + sessionStorage.getItem("access-token") + "!"
+        loginForm().classList.add(hiddenClass);
+        logoutForm().classList.remove(hiddenClass);
+        logoutForm().addEventListener("submit", (e) => {
+            e.preventDefault();
+            sessionStorage.clear();
+            console.log(sessionStorage);
+            loginForm().classList.remove(hiddenClass);
+            logoutForm().classList.add(hiddenClass);
 
-    logoutForm().addEventListener("submit", (e) => {
-      e.preventDefault();
-      sessionStorage.clear();
-      console.log(sessionStorage);
-      loginForm().classList.remove(hiddenClass);
-      logoutForm().classList.add(hiddenClass);
-
-      //clear input values
-      const inputValues = document.querySelectorAll(".form-input");
-      inputValues.forEach((input) => {
-        input.value = "";
-      });
-    });
-  }
-}
+            //clear input values
+            const inputValues = document.querySelectorAll(".form-input");
+            inputValues.forEach((input) => {
+                input.value = "";
+            });
+        });
+    };
+};
 
 let functionArray = [
   toggleCreateAccountLoginForms,
   storingCreatAccountDetails,
   saveLoginInformation,
-  formWhileLoggedIn,
+    formWhileLoggedIn,
 ];
 
 for (i = 0; i < functionArray.length; i++) {

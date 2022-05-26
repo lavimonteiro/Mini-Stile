@@ -36,13 +36,12 @@ namespace '/api/v1' do
         JOIN images
         ON card_content.image_id = images.image_id;
         ").all
-        halt(404, { message:'Lesson Not Found'}.to_json) unless card.length>0
-       
-        card = card[0]
-        lesson_title = card["lesson_name".to_sym].to_json
-        text_content = card["text_content".to_sym].to_json
-        image = card["image_url".to_sym].to_json
-        alt_text = card["description".to_sym].to_json
+        halt(404, { message:'Lessons Not Found'}.to_json) unless card.length>0
+        cardArr = []
+        card.each do |object| 
+          cardArr.push({"lesson_title":"#{object["lesson_name".to_sym]}", "text_content":"#{object["text_content".to_sym]}", "image":"#{object["image_url".to_sym]}", "alt_text":"#{object["description".to_sym]}"})
+        end
+        cardArr.to_json 
     end
 
     get '/library/lesson/:name' do |name|
@@ -55,34 +54,22 @@ namespace '/api/v1' do
         WHERE lessons.lesson_name = '#{name}' ;
         ").all
         halt(404, { message:'Lesson Not Found'}.to_json) unless lesson.length>0
-        lesson = lesson[0]
-        lesson_title = lesson["lesson_name".to_sym].to_json
-        text_content = lesson["text_content".to_sym].to_json
-
-        base = images[0]
-        base_url = base["image_url".to_sym].to_json
-        base_alt = base["description".to_sym].to_json
-        ontop = images[1]
-        ontop_url = ontop["image_url".to_sym].to_json
-        ontop_alt = ontop["description".to_sym].to_json
-        puts "HHHHHEEEEEELLLLLLLOOOOOOOO"
-        lesson_title +  text_content + base_url + base_alt
         { "lesson_title":"#{lesson['lesson_name'.to_sym]}", "text_content":"#{lesson['text_content'.to_sym]}", "base_url":"#{base['image_url'.to_sym]}" , "base_alt": "#{base['description'.to_sym]}", "on_top_url":"#{ontop['image_url'.to_sym]}" , "on_top_alt":"#{ontop['description'.to_sym]}" }.to_json
     end
 
-    get '/lesson/:name' do |name|
-        card = DB.fetch( "SELECT * FROM lessons JOIN card_content 
-        ON lessons.lesson_id =  card_content.lesson_id 
-        JOIN images
-        ON card_content.image_id = images.image_id
-        WHERE lessons.lesson_name = '#{name}' ;
-        ").all
-        lesson = DB.fetch("SELECT * FROM lessons JOIN lesson_content 
-        ON lessons.lesson_id =  lesson_content.lesson_id 
-        WHERE lessons.lesson_name = '#{name}' ;
-        ").all
-        halt(404, { message:'Lesson Not Found'}.to_json) unless lesson.length>0
-        card.to_json + lesson.to_json 
-    end
+    # get '/lesson/:name' do |name|
+    #     card = DB.fetch( "SELECT * FROM lessons JOIN card_content 
+    #     ON lessons.lesson_id =  card_content.lesson_id 
+    #     JOIN images
+    #     ON card_content.image_id = images.image_id
+    #     WHERE lessons.lesson_name = '#{name}' ;
+    #     ").all
+    #     lesson = DB.fetch("SELECT * FROM lessons JOIN lesson_content 
+    #     ON lessons.lesson_id =  lesson_content.lesson_id 
+    #     WHERE lessons.lesson_name = '#{name}' ;
+    #     ").all
+    #     halt(404, { message:'Lesson Not Found'}.to_json) unless lesson.length>0
+    #     card.to_json + lesson.to_json 
+    # end
 end
 
