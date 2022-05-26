@@ -26,7 +26,6 @@ body {
   overflow: hidden;
   width: 100%;
   max-height: var(--row-height);
-
   height: 100%;
   object-fit: cover;
 }
@@ -56,21 +55,4 @@ body {
   background-color: #a7a7a7;
   max-height: 0;
   transition: max-height 0.2s ease-out;
-}
-
-.content {
-  padding: 18px 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #a7a7a7;
-  max-height: 0;
-  transition: max-height 0.2s ease-out;
-}
-
-.lesson {
-  position: relative;
-}
-
-.lesson:after {
-  color: red;
 }
