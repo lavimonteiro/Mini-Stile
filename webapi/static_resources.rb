@@ -28,6 +28,10 @@ get '/javascript/renderlesson.js' do
     send_file '../javascript/renderlesson.js'
 end
 
+get '/javascript/rendercards.js' do
+    send_file '../javascript/rendercards.js'
+end
+
 get '/javascript/lessononeonclick.js' do
     send_file '../javascript/lessononeonclick.js'
 end
