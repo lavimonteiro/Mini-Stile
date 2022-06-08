@@ -39,7 +39,7 @@ namespace '/api/v1' do
         halt(404, { message:'Lessons Not Found'}.to_json) unless card.length>0
         cardArr = []
         card.each do |object| 
-          cardArr.push({"lesson_title":"#{object["lesson_name".to_sym]}", "text_content":"#{object["text_content".to_sym]}", "image":"#{object["image_url".to_sym]}", "alt_text":"#{object["description".to_sym]}", "classification":"#{object["classification".to_sym]}", "url":"#{object["url".to_sym]}"})
+          cardArr.push({"lesson_title":"#{object["lesson_name".to_sym]}", "text_content":"#{object["text_content".to_sym]}", "image":"#{object["image_url".to_sym]}", "alt_text":"#{object["description".to_sym]}"})
         end
         cardArr.to_json 
     end
