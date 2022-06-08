@@ -1,18 +1,3 @@
-.lessons{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-  margin: 1em;
-  padding: 1em;
-}
-
-.newHeading {
-  display: flex;  
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-}
-
 .noListDeco{
   display: inline-block;
   text-decoration: none;
@@ -20,35 +5,73 @@
 
 * {box-sizing: border-box}
 
-.lesson {
+#lesson-one {
   position: relative;
-}
+  width: 70%;
+  max-width:500px;}
 
-
-.img{
+#img-one{
   display: block;
-  aspect-ratio: 2 / 1;
-  width: 100%;
+  width: 43vw;
+  height: 20vw;
   object-fit: cover;
 }
 
-.overlay {
+.overlay-one {
   position: absolute;
   bottom: 0;
   background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); 
   color: #f1f1f1;
+  width: 145%;
   transition: .5s ease;
   opacity:0;
-  width: 100%;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+} 
+
+/* .lesson-one:hover .overlay-one {
+  opacity: 1;
+} */
+
+#lesson-two {
+  position: relative;
+  width: 70%;
+  max-width: 500px;}
+/* The overlay effect - lays on top of the container and over the image */
+#img-two{
+  display: block;
+  width: 43vw;
+  height: 20vw;
+  object-fit: cover;
+}
+.overlay-two {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 145%;
+  transition: .5s ease;
+  opacity:0;
   color: white;
   font-size: 20px;
   padding: 20px;
   text-align: center;
 }
 
- .active, .lesson:hover .overlay{
+/* When you mouse over the container, fade in the overlay title
+.lesson-two:hover .overlay-two {
+  opacity: 1;
+}
+ */
+ .active, #lesson-one:hover .overlay-one{
    opacity: 1;
+}
+.active, #lesson-two:hover .overlay-two{
+  opacity: 1;
 }
 
 
@@ -57,35 +80,43 @@
   width: 100%;
   border: none;
   outline:none;
-  margin: 0;
-  padding: 0;
 }
 
   .content {
     padding: 18px 18px;
-    display: block;
+    display: none;
     overflow: hidden;
     background-color: #a7a7a7;
-    max-height: 20vw;
+    width: 43vw;
+    margin-left: 6px;
+    max-height: 0;
     transition: max-height 0.2s ease-out;
   }
 
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 3%;
+}
+
+/* Remove extra left and right margins, due to padding */
 .row {margin: 0 0;}
 
+/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-.noMatchesBanner{
-  display:block;
+#noMatchesBanner{
+  display:none;
   font-family: sans-serif;
   height: 80px;
   width: 100%;
   font-size: 15px;
   text-align: center;
 }
-.classification{
-  background-color: rgb(95, 167, 23);
+#classification{
+  background-color: rgb(95, 167, 23;
   color: white;
 }
