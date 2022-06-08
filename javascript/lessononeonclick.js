@@ -1,3 +1,4 @@
+var reactContainer = document.getElementsByClassName("lessons")
 var icon = document.getElementsByClassName("icon");
 var i;
 let onIconClick = function () {
