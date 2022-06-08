@@ -1,86 +1,122 @@
-.newHeading {
-  padding: 1em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.data {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-  padding-top: 1em;
-  padding-right: 5em;
-  padding-left: 5em;
-}
-
-.noListDeco {
+.noListDeco{
   display: inline-block;
   text-decoration: none;
 }
-* {
-  box-sizing: border-box;
-}
 
-.lesson {
+* {box-sizing: border-box}
+
+#lesson-one {
   position: relative;
-}
+  width: 70%;
+  max-width:500px;}
 
-.noMatch {
-  color: black;
-  font-family: sans-serif;
-  width: 100%;
-  text-align: center;
-  font-size: 40px;
-  font-weight: bolder;
-}
-
-#img {
+#img-one{
   display: block;
-  width: 100%;
-  aspect-ratio: 2 / 1;
+  width: 43vw;
+  height: 20vw;
   object-fit: cover;
 }
-.overlay {
+
+.overlay-one {
   position: absolute;
   bottom: 0;
   background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); 
   color: #f1f1f1;
-  width: 100%;
-  transition: 0.5s ease;
-  opacity: 0;
+  width: 145%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+} 
+
+/* .lesson-one:hover .overlay-one {
+  opacity: 1;
+} */
+
+#lesson-two {
+  position: relative;
+  width: 70%;
+  max-width: 500px;}
+/* The overlay effect - lays on top of the container and over the image */
+#img-two{
+  display: block;
+  width: 43vw;
+  height: 20vw;
+  object-fit: cover;
+}
+.overlay-two {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 145%;
+  transition: .5s ease;
+  opacity:0;
   color: white;
   font-size: 20px;
   padding: 20px;
   text-align: center;
 }
-.active,
-.lesson:hover .overlay {
+
+/* When you mouse over the container, fade in the overlay title
+.lesson-two:hover .overlay-two {
   opacity: 1;
 }
+ */
+ .active, #lesson-one:hover .overlay-one{
+   opacity: 1;
+}
+.active, #lesson-two:hover .overlay-two{
+  opacity: 1;
+}
+
+
 .icon {
   cursor: pointer;
   width: 100%;
   border: none;
-  outline: none;
-  padding: 0;
-  margin: 0;
-}
-.content {
-  padding: 18px 18px;
-  display: block;
-  overflow: hidden;
-  background-color: #a7a7a7;
-  transition: max-height 0.2s ease-out;
+  outline:none;
 }
 
-/* .noMatchesBanner {
-  color: black;
-  display: none;
+  .content {
+    padding: 18px 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #a7a7a7;
+    width: 43vw;
+    margin-left: 6px;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 3%;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 0;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#noMatchesBanner{
+  display:none;
   font-family: sans-serif;
   height: 80px;
   width: 100%;
   font-size: 15px;
   text-align: center;
-} */
+}
+#classification{
+  background-color: rgb(95, 167, 23;
+  color: white;
+}

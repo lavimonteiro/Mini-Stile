@@ -12,12 +12,36 @@ get '/library' do
     send_file '../library.html'
 end
 
+
 get '/lesson' do
     send_file '../lesson.html' 
 end
 
-get '/javascript/:file' do |file|
-    send_file "../javascript/#{file}"
+get '/javascript/login.js' do
+    send_file '../javascript/login.js'
+end
+get '/javascript/showuser.js' do
+send_file '../javascript/showuser.js'
+end
+
+get '/javascript/renderlesson.js' do
+    send_file '../javascript/renderlesson.js'
+end
+
+get '/javascript/rendercards.js' do
+    send_file '../javascript/rendercards.js'
+end
+
+get '/javascript/lessononeonclick.js' do
+    send_file '../javascript/lessononeonclick.js'
+end
+
+get '/javascript/gotolesson.js' do
+    send_file '../javascript/gotolesson.js'
+end
+
+get '/javascript/searchbar.js' do
+    send_file '../javascript/searchbar.js'
 end
 
 get '/css/login.css' do
